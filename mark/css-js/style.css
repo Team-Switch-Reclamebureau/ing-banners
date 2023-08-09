@@ -1,0 +1,338 @@
+@font-face {
+  font-family: "ING Me";
+  src: url("INGMe.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ING Me Bold";
+  src: url("INGMe-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*-------------------------------------
+    Reset
+---------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+#banner * {
+  /*position: absolute;*/
+}
+#banner br {
+  position: static;
+}
+img {
+  border: none;
+}
+/*-------------------------------------
+    Layout
+---------------------------------------*/
+#ad {
+  width: 300px;
+  height: 250px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#banner {
+  position: absolute;
+  display: block;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden;
+  background: #ff6600;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.outerBorder {
+  width: 300px;
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.clicktag {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  cursor: pointer;
+  background: gray;
+  opacity: 0;
+}
+.clicktag img {
+  border: none;
+  outline: none;
+}
+#frame_one,
+#frame_two,
+#frame_three {
+  width: 100%;
+  height: 250px;
+}
+/*-------------------------------------
+    Banner Body
+---------------------------------------*/
+#intro {
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+}
+#introContainer {
+  width: auto;
+  height: auto;
+  margin-top: 50px;
+  font-family: "ING Me Bold";
+  font-style: normal;
+  font-weight: normal;
+  will-change: transform;
+  top: 0px;
+}
+.introCopyContainer {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 2px 10px;
+  display: inline-block;
+  transform-origin: left center;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #ff6600;
+}
+.introCopy {
+  position: static;
+  color: #fff;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  font-size: 19px;
+}
+#introImage {
+  will-change: transform;
+}
+
+.introFullContainer {
+  display: block;
+  position: relative;
+}
+
+#introContainer > div:nth-child(1) {
+  margin-left: 15px;
+}
+#introContainer > div:nth-child(2) {
+  margin-left: 35px;
+}
+#introContainer > div:nth-child(3) {
+  margin-left: 55px;
+}
+#whiteCopyContainer {
+  position: absolute;
+  left: 245px;
+  top: 234px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+#logoWhiteCopy {
+  font-family: "ING Me Bold";
+  height: 10px;
+  left: 1px;
+  top: -3px;
+  letter-spacing: -0.001em;
+  text-align: left;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 1);
+  width: auto;
+  position: relative;
+  font-size: 7px;
+}
+#logoWhiteCopy div {
+  will-change: transform;
+}
+.logoWhite {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left: 244px;
+  top: 185px;
+  /* switch */
+  top: 194px;
+}
+#footer {
+  position: absolute;
+  width: 300px;
+  height: 111px;
+  left: 0px;
+  top: 151px;
+  will-change: transform;
+}
+.footerBg {
+  position: absolute;
+  width: 300px;
+  height: 111px;
+  left: 0px;
+  top: 0px;
+}
+.footerBgBottom {
+  position: absolute;
+  width: 300px;
+  height: 97px;
+  left: 0px;
+  top: 14px;
+  background: url("../images/footerBgBottom.svg");
+  background-repeat: no-repeat;
+  background-size: 300px, 97px;
+}
+.footerBgTop_copy1 {
+  position: absolute;
+  width: 300px;
+  height: 97px;
+  left: 0px;
+  top: 0px;
+  background: url("../images/footerBgTop_copy1.svg");
+  background-repeat: no-repeat;
+  background-size: 300px, 97px;
+}
+#footerBgBottomEnd {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.percentage {
+  position: absolute;
+  width: 62px;
+  height: 37px;
+  left: 14px;
+  top: 31px;
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 30px;
+  line-height: 15px;
+  color: rgba(51, 51, 51, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Bold";
+  font-weight: normal;
+  font-style: normal;
+}
+.footer_text {
+  position: absolute;
+  width: 162px;
+  height: 17px;
+  left: 82px;
+  top: 31px;
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 13px;
+  line-height: 15px;
+  color: rgba(51, 51, 51, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me";
+  font-weight: normal;
+  font-style: normal;
+}
+.logoOrange {
+  position: absolute;
+  width: 43px;
+  height: 54px;
+  left: 245px;
+  top: 186px;
+  /* switch */
+  top: 194px;
+}
+.endBgContainer {
+  position: absolute;
+  width: 301px;
+  height: 346px;
+  left: 0px;
+  top: -76px;
+}
+.endBg {
+  position: absolute;
+  width: 300px;
+  height: 270px;
+  left: 0px;
+  top: 76px;
+  background-color: rgb(255, 102, 0);
+}
+.footerBgBottomEnd {
+  position: absolute;
+  width: 301px;
+  height: 96px;
+  left: 0px;
+  top: 0px;
+  background: url("../images/footerBgBottomEnd.svg");
+  background-repeat: no-repeat;
+  background-size: 301px, 96px;
+}
+#endCopy {
+  position: absolute;
+  height: 157px;
+  left: 20px;
+  top: 40px;
+  letter-spacing: -0.001em;
+  text-align: left;
+  font-size: 28px;
+  line-height: 32px;
+  color: rgba(255, 255, 255, 1);
+  white-space: pre-wrap;
+  font-family: "ING Me Bold";
+  font-weight: normal;
+  font-style: normal;
+  width: 100%;
+  margin-top: 20px;
+}
+#ctaContainer {
+  position: absolute;
+  width: 300px;
+  height: 202px;
+  left: 0px;
+  top: 10px;
+  overflow: hidden;
+  will-change: transform;
+}
+.ctaContainerFill {
+  opacity: 0;
+}
+#ctaInnerContainer {
+  width: auto;
+  height: auto;
+  margin-top: 150px;
+  margin-left: 15px;
+  padding: 10px 20px 10px 20px;
+  overflow: hidden;
+  display: block;
+  color: white;
+  border-radius: 5px;
+  background-color: #525199;
+  font-size: 18px;
+  font-family: "ING Me Bold";
+  font-style: normal;
+  font-weight: normal;
+  top: -10px;
+  /* switch */
+  font-size: 14px;
+}
+.cta {
+  position: static;
+  float: left;
+}
+.loading {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  left: 0px;
+  top: 0px;
+  background: url("../images/loading.jpg");
+  background-repeat: no-repeat;
+  background-size: 300px, 250px;
+}
