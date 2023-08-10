@@ -38,15 +38,13 @@
 }
 
 .outerBorder {
-	/* position: absolute;
-	top: 0;
-	left: 0; */
+	position: relative;
 	width: 300px;
 	height: 250px;
 	border: 1px solid rgba(0, 0, 0, 0.25);
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	z-index: 2;
+	z-index: 10;
 }
 
 .clicktag {
@@ -110,7 +108,6 @@
 	overflow: hidden;
 	border-radius: 5px;
 	background-color: #ff6600;
-	opacity: 0.9;
 }
 .text span.purple {
 	background-color: #ab0066;

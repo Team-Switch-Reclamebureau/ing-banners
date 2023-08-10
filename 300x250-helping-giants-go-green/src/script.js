@@ -16,12 +16,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 		// slide 1
 		var slide1Duration = 3;
-		tl.from('.slide-1 .text', {
+		tl.from('.slide-1 .text span:nth-child(1)', {
 			duration: slide1Duration,
 			opacity: 0,
 			x: -50,
 			ease: 'ease-out',
 		});
+		tl.from(
+			'.slide-1 .text span:nth-child(2)',
+			{
+				duration: slide1Duration,
+				opacity: 0,
+				x: -50,
+				ease: 'ease-out',
+			},
+			'-=2.5'
+		);
 		tl.to(
 			'.slide-1 .image img',
 			{
