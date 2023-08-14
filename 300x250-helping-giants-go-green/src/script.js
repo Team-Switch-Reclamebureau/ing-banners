@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		const tl = gsap.timeline();
 
 		// slide 1
-		var slide1Duration = 3;
+		var slide1Duration = 4;
 		// slide1Duration = 0; //DEV
 		tl.to('.slide-1 .text', {
 			duration: slide1Duration,
@@ -119,25 +119,25 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			y: 16,
 			ease: 'ease-out',
 		});
+		tl.from(
+			'.slide-2 .text .bg',
+			{
+				duration: 0.75,
+				transform: 'scale(0, 100%)',
+				ease: 'ease-out',
+			},
+			'<'
+		);
 		tl.staggerFrom(
 			'.slide-2 .text span > k',
-			0.5,
+			0.125,
 			{
 				opacity: 0,
 				y: 8,
 				ease: 'ease',
 			},
-			0.25,
+			0.125,
 			'<'
-		);
-		tl.from(
-			'.slide-2 .text .bg',
-			{
-				duration: 1.5,
-				transform: 'scale(0, 100%)',
-				ease: 'ease-out',
-			},
-			'-=1.5'
 		);
 		tl.from(
 			'.slide-2 .text span.purple',
