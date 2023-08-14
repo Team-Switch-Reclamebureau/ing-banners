@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		);
 
 		// // slide 2
-		var slide2Duration = 4;
+		var slide2Duration = 3;
 		tl.from('.slide-2 .text > span.orange', {
 			duration: 0.5,
 			opacity: 0,
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		});
 
 		let lionLength = 0.125;
-		let lionDelay = 0.33;
+		let lionDelay = 0.2;
 		tl.from('.slide-3 svg #do', {
 			duration: lionLength,
 			opacity: '0',
