@@ -189,20 +189,26 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			width: '100%',
 			ease: 'ease-out',
 		});
-
-		// tl.to(
-		// 	'.logo',
-		// 	{
-		// 		duration: 0,
-		// 		top: '50%',
-		// 		left: '50%',
-		// 		x: '-50%',
-		// 		y: '-50%',
-		// 		width: 96,
-		// 		height: 96,
-		// 		ease: 'ease-out',
-		// 	},
-		// 	'<'
-		// );
+		
+		let lionLength = 0.125;
+		let lionDelay = 0.33;
+		tl.from('.slide-3 svg #do', {
+			duration: lionLength,
+			opacity: '0',
+			ease: 'ease-out',
+			delay: lionDelay,
+		});
+		tl.from('.slide-3 svg #your', {
+			duration: lionLength,
+			opacity: '0',
+			ease: 'ease-out',
+			delay: lionDelay,
+		});
+		tl.from('.slide-3 svg #thing', {
+			duration: lionLength,
+			opacity: '0',
+			ease: 'ease-out',
+			delay: lionDelay,
+		});
 	}
 });
