@@ -1,0 +1,119 @@
+/* ------------------------------------------------
+ LEAVE IN PLACE --------------------------------- */
+body {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.outer-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+/* --------------------------------------------- */
+
+@font-face {
+	font-family: 'ING Me';
+	src: url('../assets/INGMe.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ING Me Bold';
+	src: url('../assets/INGMe-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	background: grey;
+	color: white;
+	font-family: 'ING Me';
+}
+
+#banner {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	/* background-image: url('../assets/image_left.jpg');
+	background-size: cover;
+	background-position: center left;
+	background-repeat: no-repeat; */
+}
+
+img {
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: auto;
+
+	animation: pan 40s infinite ease-in-out;
+}
+
+@keyframes pan {
+	0% {
+		transform: translateX(0px);
+	}
+	50% {
+		transform: translateX(-100px);
+	}
+}
+
+.container {
+	position: absolute;
+	left: 16px;
+	right: 16px;
+}
+
+.top {
+	top: 40vh;
+}
+
+.bottom {
+	bottom: 16px;
+}
+
+.text {
+}
+
+.orange {
+	/* Make it your job */
+
+	font-family: 'ING Me Bold';
+	font-size: 9vmin;
+	background-color: #ff6200;
+	color: white;
+	border-radius: 5px;
+	padding: 5px 10px;
+	width: max-content;
+}
+
+.purple {
+	/* ing.nl/careers */
+
+	background-color: #ab0066;
+	color: white;
+	border-radius: 5px;
+	font-size: 5vmin;
+	padding: 2px 8px;
+	margin-top: 8px;
+	width: max-content;
+}
+
+.white {
+	/* helping giants go green */
+
+	font-family: 'ING Me Bold';
+	font-size: 12vmin;
+}
+
+.disclaimer {
+	margin-top: 10vh;
+
+	font-size: 8px;
+}

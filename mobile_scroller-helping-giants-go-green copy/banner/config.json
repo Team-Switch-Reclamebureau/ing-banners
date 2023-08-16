@@ -1,0 +1,10 @@
+{
+	"clickurl": "http://www.example.com",
+	"format": "Mobile Scroller",
+	"devicesimulator" : "no",
+
+	"size": {
+		"unit":"percent",
+		"height":100
+	}
+}

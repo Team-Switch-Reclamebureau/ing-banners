@@ -1,0 +1,511 @@
+<!--
+ gumgum-ljp_dev_environment v3.3.6 2023-06-01 
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>JustPremium | Preview</title>
+	<style>
+		body {
+			margin: 0;
+			background: #f5f0ea;
+		}
+
+		iframe {
+			display: block;
+		}
+
+		#creative_main,
+		#creative_placeholder {
+			width: 100%;
+			position: relative;
+			margin: 0 auto;
+			display: block;
+			z-index: 0;
+		}
+
+		#creative_placeholder {
+			pointer-events: none;
+		}
+
+		.ad-bar {
+			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size: 15px;
+			padding: 4px 0;
+			position: relative;
+			z-index: 1;
+			color: white;
+			background: black;
+			text-align: center;
+			width: 100%;
+			/* opacity: 0; */
+		}
+
+		.ad-bar .triangle {
+			width: 0;
+			height: 0;
+			border-top: 8px solid white;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-bottom: 0 solid transparent;
+			box-sizing: border-box;
+			display: inline-block;
+			margin: 2px 20px;
+		}
+
+		.ad-bar .triangle:nth-of-type(1) {
+			float: left;
+		}
+
+		.ad-bar .triangle:nth-of-type(2) {
+			float: right;
+		}
+
+		.ad-bar-container {
+			position: relative;
+			overflow: hidden;
+			z-index: 2;
+		}
+
+		.ad-bar-container:nth-of-type(1) {
+			z-index: 3;
+		}
+
+		#website_top,
+		#website_bottom {
+			position: relative;
+			width: 100%;
+			height: 1000px;
+			border: none;
+			z-index: 2;
+			pointer-events: none;
+			overflow: hidden;
+		}
+
+		#website_top iframe,
+		#website_bottom iframe {
+			width: 100%;
+			height: 3000px;
+			border: none;
+		}
+
+		#website_bottom {
+			z-index: 1;
+			/* height:3000px; */
+		}
+
+		#view-message {
+			position: fixed;
+			top: 35%;
+			left: 0;
+			top: 40%;
+			text-align: center;
+			width: 100%;
+			font-family: sans-serif;
+			font-size: 18px;
+			pointer-events: none;
+			z-index: 10;
+		}
+
+		#info-display {
+			position: fixed;
+			z-index: 200;
+			font-size: 13px;
+			background: rgba(0, 0, 0, .6);
+			white-space: nowrap;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: none;
+		}
+
+		#info-display div {
+			display: inline-block;
+			margin: 5px 0 5px 10px;
+			/* border:lightgrey solid 1px; */
+			text-align: left;
+			padding: 2px;
+			border-radius: 2px;
+		}
+
+		#info-display div:nth-last-of-type(1) {
+			margin-right: 10px;
+		}
+
+		#info-display div>* {
+			margin: 0;
+			user-select: none;
+			color: white;
+		}
+
+		#info-checkbox {
+			margin-left: 5%;
+		}
+	</style>
+
+	<style id="phone-simulator">
+		.device-simulator.device .screen {
+			/* SET DEVICE DIMENSIONS HERE --------------------------------------------
+			Ratio to match:
+			iPhone 5, iPhone 5S, iPhone 5C, iPhone SE,
+			iPhone 6S Plus, iPhone 6 Plus, iPhone 7 Plus,
+			Huawei P9, Sony Xperia Z5, Samsung Galaxy A5, Samsung Galaxy A7,
+			Samsung Galaxy S5, Samsung Galaxy A9, HTC One M9, Sony Xperia M5,
+			Samsung Galaxy Note 5, Samsung Galaxy S6, Huawei Nexus 6P, LG G5
+
+			width: 326px;
+			height: 580px;
+
+			Ratio to match:
+			Samsung Galaxy J1 (2016), Samsung Z1, Samsung Z2, Lumia 435,
+			Alcatel Pixi 4, LG Joy, ZTE Blade G, iPhone 4
+
+			width: 386px;
+			height: 580px;
+			----------------------------------------------------------------------- */
+			width: 326px;
+			height: 580px;
+			/* -------------------------------------------------------------------- */
+		}
+
+		.device-simulator.device {
+			position: fixed;
+			border-radius: 30px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px 15px 10px;
+			background: #464646;
+			text-align: center;
+			box-shadow: 0px 6px 0px black;
+			clip: rect(0, 200px 200px 0);
+
+		}
+
+		.device-simulator.device .screen {
+			position: relative;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			background: lightgrey;
+		}
+
+		.device-simulator.device span {
+			display: inline-block;
+			background: white;
+			border-radius: 100px;
+			background: #585858;
+			box-shadow: inset 0px 2px 0px black;
+		}
+
+		.device-simulator.device span.speaker {
+			height: 16px;
+			margin-bottom: 10px;
+			width: 60px;
+		}
+
+		.device-simulator.device span.button {
+			height: 40px;
+			margin-top: 10px;
+			width: 40px;
+		}
+
+		.device-simulator.device_content_mask {
+			background: red;
+			position: absolute;
+		}
+	</style>
+
+</head>
+
+<body jpx-id="is">
+	<div class="device">
+		<div class="top">
+			<span class="camera"></span>
+			<span class="speaker"></span>
+		</div>
+		<div class="screen">
+			<div id="website_top">
+				<iframe src="//lab.justpremium.com/demosite/noscroll/index.html?v=2"></iframe>
+			</div>
+			<div class="ad-bar-container">
+				<div class="ad-bar">ADVERTISEMENT</div>
+			</div>
+			<div id="creative_main_placeholder"></div>
+			<iframe id="creative_main" class="creative-panel" src="banner/index.html" frameborder="0"></iframe>
+			<div class="ad-bar-container">
+				<div class="ad-bar"><span class="triangle"></span>Scroll for more<span class="triangle"></span></div>
+			</div>
+			<div id="website_bottom">
+				<iframe src="//lab.justpremium.com/demosite/noscroll/index-nomessage.html"></iframe>
+			</div>
+		</div>
+		<div class="bottom">
+			<span class="button"></span>
+		</div>
+	</div>
+	<h1 id="view-message"></h1>
+
+	<script src="//cdn.justpremium.com/Justpremium/boilerplate/lib/TweenMax_2.0.1.js"></script>
+	<script>var authoring=function(l){return{isDebug:!1,_dimensions:void 0,logInBody:function(e,t,i){e=e||"300px",t=t||"100px",i=i||"16px",this._messageField||(this._messageField=document.createElement("div"),this._messageField.style.cssText="color:black;padding:6px;font-family:Arial;font-size:"+i+";opacity:.7;background:white;position:fixed;top:0;left:0;z-index:200;width:"+e+";height:"+t+";overflow:scroll;")},log:function(e,t,i,o){var n=this;n._background=o||"#fff",(n.isDebug||l.Premium.general.local)&&(i?("number"!=typeof i&&(i=500),setInterval(function(){n._doLog(e,t)},i)):n._doLog(e,t))},libraryLog:function(e){this.log(e,null,null,"#ffeeb8")},_doLog:function(e,t){var i=e;if(t&&e.style){var o=l.getComputedStyle(e);i="element: tagName="+e.tagName+" className="+e.className+" id="+e.id+"\n",i+="parentElement: tagName="+e.parentElement.tagName+" className="+e.parentElement.className+" id="+e.parentElement.id+"\n";var n=e.ownerDocument,s=n.defaultView||n.parentWindow;if(i+="window is top: "+(s===s.top)+"\n",i+="display: "+o.display+"\n",i+="position: "+o.position+"\n",i+="opacity: "+o.opacity+"\n",i+="visibility: "+o.visibility+"\n",i+="offsetWidth: "+e.offsetWidth+"\n",i+="offsetHeight: "+e.offsetHeight+"\n",i+="offsetLeft: "+e.offsetLeft+"\n",i+="offsetTop: "+e.offsetTop+"\n","object"==typeof t)for(var r in t)i+=t[r]+":"+o[t[r]]+"\n";else"string"==typeof t&&(i+=t+":"+o[t]+"\n");i+="\n"}var a="JP "+(new Date).toString().match(/\d{2}:\d{2}:\d{2}/)[0];console.log("%c"+a+":\r\n"+i+" ","background: "+this._background+"; color: #555; font-weight: bold;"),this._messageField&&(i=i.replace(/\n/g,"<br>"),l.document.body.appendChild(this._messageField),this._messageField.innerHTML+=a+":<br/>"+i+"<br/><br/>",this._messageField.scrollTop=this._messageField.scrollHeight)},error:function(e,t){var i="";if(Array.isArray(t))for(var o=0;o<t.length;o++)i+="\r\n "+t[o]+" ";else i="\r\n "+t;console.error("%c premium_"+l.Premium.general.version+".js Error:  \r\n"+e.toUpperCase()+" \r\n ───────────────────────────── "+i,"color: black; padding: 5px 0; line-height: 20px;")}}}</script>
+	<script>
+		window.requestAnimationFrame = window.requestAnimationFrame ||
+			window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
+			window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+			function(func) {
+				return setTimeout(func, 1000 / 60)
+			};
+		window.cancelAnimationFrame = window.cancelAnimationFrame ||
+			window.mozCancelAnimationFrame ||
+			function(ref) {
+				clearTimeout(ref)
+			};
+		(function() {
+			var websiteTop = document.getElementById("website_top");
+			var websiteBottom = document.getElementById("website_bottom");
+			var websiteBottomContainer = document.getElementById("bottom_container");
+			var creativeMain = document.getElementById("creative_main");
+			var creativeMainPlaceHolder = document.getElementById("creative_main_placeholder");
+			var topBar = document.getElementsByClassName("ad-bar-container")[0];
+			var bottomBar = document.getElementsByClassName("ad-bar-container")[1];
+			var device = document.getElementsByClassName("device")[0];
+			var deviceContentMask = document.getElementsByClassName("device_content_mask")[0];
+			var deviceBottom = document.querySelector(".bottom");
+			var viewMessage = document.getElementById("view-message");
+			var scrollEl;
+			var scrollElRect, isUseFullWindow, websitesLoaded = 0;
+			var xobj = new XMLHttpRequest();
+			var winDimensions = {
+				width: 0,
+				height: 0
+			};
+			var topBarTop, creativeMainHeight, barHeight, sizeMain, fixed, unit, config;
+			var prevScrollTop = 0;
+			/**
+			iphone5: 320x488 (with toolbars showing)
+			advertiser bar height: 26
+			488 - (26 * 2) = 436
+			**/
+			var ShortestRatio = 32 / 43;
+
+			TweenLite.defaultEase = Power1.easeInOut;
+			xobj.overrideMimeType("application/json");
+			xobj.open('GET', "banner/config.json", true);
+			xobj.onreadystatechange = function() {
+				if (xobj.readyState == 4 && xobj.status == "200") {
+					config = JSON.parse(xobj.responseText);
+					checkPostInfo();
+					window.top.addEventListener('message', websiteResizeHandler);
+					isUseFullWindow = config.devicesimulator !== "yes";
+					scrollEl = isUseFullWindow ? window : document.getElementsByClassName("screen")[0];
+					if (!isUseFullWindow) {
+						document.getElementsByClassName("device")[0].classList.add("device-simulator");
+					}
+					sizeMain = config.size.height;
+					unit = config.size.unit;
+					document.querySelector("#info-display").style.display = config.infopanel === "yes" ? "block" : "none";
+					requestAnimationFrame(init);
+					var ref = setInterval(function () {
+						if (creativeMain.contentWindow.Premium){
+							clearInterval(ref);
+							creativeMain.contentWindow.Premium.authoring = authoring(creativeMain.contentWindow);
+						}
+					}, 10);
+				}
+			};
+			xobj.send(null);
+
+			websiteTop.querySelector("IFRAME").addEventListener("load", function() {
+				websitesLoaded++;
+				checkPostInfo();
+			});
+
+			websiteBottom.querySelector("IFRAME").addEventListener("load", function() {
+				websitesLoaded++;
+				checkPostInfo();
+			});
+
+			function checkPostInfo() {
+				if (websitesLoaded === 2 && config) {
+					websiteTop.querySelector("IFRAME").contentWindow.postMessage({
+						format: config.format,
+						version:"3.3.6"
+					}, '*');
+					websiteBottom.querySelector("IFRAME").contentWindow.postMessage({
+						format: config.format,
+						version:"3.3.6"
+					}, '*');
+				}
+			}
+
+			function websiteResizeHandler(e) {
+				var dist = 00;
+				websiteTop.style.height = e.data.splitPos + dist / 2 + "px";
+				websiteBottom.querySelector("IFRAME").style.marginTop = -(e.data.splitPos + dist) + "px";
+				requestAnimationFrame(function() {
+					resizeHandler();
+				})
+			}
+
+			function resizeHandler() {
+				winDimensions.width = scrollEl.clientWidth || window.innerWidth || (document.documentElement || document.body).clientWidth;
+                winDimensions.height = scrollEl.clientHeight || window.innerHeight || (document.documentElement || document.body).clientHeight;
+				if (navigator.appName == 'Microsoft Internet Explorer' ||
+					!!(navigator.userAgent.match(/Trident/) ||
+						navigator.userAgent.match(/rv:11/))) {
+					if ("getBoundingClientRect" in scrollEl) {
+						scrollElRect = scrollEl.getBoundingClientRect();
+					}
+				}
+				if (!scrollElRect) {
+					scrollElRect = {
+						top: scrollEl.offsetTop || 0,
+						left: scrollEl.offsetLeft || 0,
+						width: winDimensions.width,
+						height: winDimensions.height
+					};
+				}
+				scrollElRect.bottom = deviceBottom.clientHeight + parseInt(getComputedStyle(device).paddingBottom);
+				if (unit === "percent") {
+					creativeMainHeight = (winDimensions.height - barHeight * 2) * sizeMain / 100;
+				} else {
+					creativeMainHeight = sizeMain;
+				}
+				creativeMain.style.height = creativeMainHeight + "px";
+				topBar.style.width = bottomBar.style.width = creativeMain.style.width = (fixed ? fixed.width : winDimensions.width) + "px";
+				var prevMessageText = viewMessage.innerText;
+				if (winDimensions.width < winDimensions.height && winDimensions.width / winDimensions.height > ShortestRatio) {
+					viewMessage.innerText = "Below shortest ratio screen size!";
+				} else {
+					viewMessage.innerText = "";
+				}
+				scrollHandler();
+			}
+
+
+
+			function scrollHandler() {
+				topBarTop = websiteTop.getBoundingClientRect().height;
+				var scrollTop = scrollEl.scrollTop || scrollEl.pageYOffset;
+				var isDirectionUp = scrollTop > prevScrollTop;
+				prevScrollTop = scrollTop;
+				if (scrollTop > topBarTop) { // top bar above or at the top
+					setBottomBarPosition(true);
+					setCreativeMainPosition(false);
+					setTopBarPosition(false);
+					topBar.style.top = scrollElRect.top + "px";
+					topBar.firstElementChild.style.top = Math.min(0, (topBarTop + creativeMainHeight) - scrollTop + barHeight) + "px"
+				} else if (scrollTop < (topBarTop + creativeMainHeight + (barHeight * 2)) - winDimensions.height) { // bottom bar below or at the bottom
+					setTopBarPosition(true);
+					setCreativeMainPosition(false);
+					setBottomBarPosition(false);
+					creativeMain.style.top = "auto";
+					creativeMain.style.bottom = (scrollElRect.bottom + barHeight) + "px";
+					bottomBar.style.bottom = scrollElRect.bottom + "px";
+					bottomBar.firstElementChild.style.bottom = Math.min(0, (scrollTop + winDimensions.height - barHeight) - topBarTop) + "px";
+				} else { // top bar and bottom bar in the middle
+					setCreativeMainPosition(true);
+					setTopBarPosition(true);
+					setBottomBarPosition(true);
+					if (isDirectionUp) {
+						creativeMain.style.top = "auto";
+						creativeMain.style.bottom = scrollElRect.bottom + "px";
+					}
+				}
+				var mainVisible = scrollTop >= (topBarTop - winDimensions.height) && scrollTop <= topBarTop + creativeMainPlaceHolder.offsetHeight
+				creativeMain.style.visibility = mainVisible ? "visible" : "hidden";
+			}
+
+			function setTopBarPosition(relative) {
+				if (relative) {
+					topBar.style.position = "relative";
+					creativeMainPlaceHolder.style.marginTop = topBar.style.top = topBar.style.left = "auto";
+				} else {
+					topBar.style.position = "fixed";
+					topBar.style.top = scrollElRect.top + "px";
+					topBar.style.left = scrollElRect.left + "px";
+					creativeMainPlaceHolder.style.marginTop = barHeight + "px";
+				}
+			}
+
+			function setBottomBarPosition(relative) {
+				if (relative) {
+					bottomBar.style.position = "relative";
+					// bottomBar.style.top = bottomBar.style.left = "auto";
+					bottomBar.style.bottom = "0px"
+				} else {
+					bottomBar.style.position = "fixed";
+					// bottomBar.style.top = scrollElRect.top + winDimensions.height - barHeight + "px";
+					bottomBar.style.bottom = "0px";
+					// bottomBar.style.top = "auto"
+					// bottomBar.style.left = scrollElRect.left + "px";
+				}
+			}
+
+			function setCreativeMainPosition(relative) {
+				if (relative) {
+					creativeMainPlaceHolder.style.position = "absolute";
+					creativeMain.style.top = creativeMain.style.left = creativeMain.style.right = "auto";
+					creativeMain.style.position = "relative";
+				} else {
+					creativeMainPlaceHolder.style.position = "relative"
+					creativeMainPlaceHolder.style.height = creativeMainHeight + "px";
+					creativeMain.style.top = scrollElRect.top + barHeight + "px";
+					creativeMain.style.position = "fixed";
+					creativeMain.style.right = "0";
+					var scrollbarOffset = scrollEl.clientWidth - scrollEl.offsetWidth;
+					scrollbarOffset = isNaN(scrollbarOffset) ? 0 : scrollbarOffset;
+					creativeMain.style.left = scrollbarOffset + "px";
+				}
+			}
+
+			function init() {
+				barHeight = topBar.offsetHeight;
+				window.jpxApiInterface = {};
+				resizeHandler();
+				scrollHandler();
+				scrollEl.addEventListener("scroll", scrollHandler);
+				window.addEventListener("resize", resizeHandler);
+			}
+
+		}());
+
+		(function infoDisplay() {
+			var checkbox = document.querySelector("#info-checkbox");
+			var displayHolder = document.createElement("DIV");
+			var isFirstUpate = true;
+
+			displayHolder.id = "info-display";
+			document.body.appendChild(displayHolder);
+			var iframes = document.querySelectorAll(".creative-panel");
+			var downPos = {
+				x: 0,
+				y: 0
+			};
+			var downMousePos = {
+				x: 0,
+				y: 0
+			};
+
+			function updateInfo() {
+				var htmlStr = "";
+				for (var i = 0; i < iframes.length; i++) {
+					htmlStr += "<div><h3>" + iframes[i].contentWindow.document.body.id + "</h3>" +
+						"<p>width: " + iframes[i].contentWindow.innerWidth + "px</p>" +
+						"<p>height: " + iframes[i].contentWindow.innerHeight + "px</p></div>";
+				}
+				displayHolder.innerHTML = htmlStr;
+			}
+
+			window.addEventListener("resize", updateInfo);
+			window.addEventListener("load", updateInfo);
+
+		})()
+	</script>
+
+
+</body>
+
+</html>
