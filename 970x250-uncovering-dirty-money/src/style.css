@@ -95,14 +95,14 @@
 .text span {
 	display: block;
 	width: max-content;
-	font-size: 48px;
+	font-size: 40px;
 	font-family: 'ING Me Bold';
 }
 .text span.orange {
 	position: relative;
 	width: auto;
 	height: auto;
-	padding: 2px 10px;
+	padding: 0.25em 0.4em;
 	display: inline-block;
 	overflow: hidden;
 }
@@ -125,10 +125,10 @@ k {
 .text span.purple {
 	background-color: #ab0066;
 	border-radius: 5px;
-	font-size: 32px;
-	padding: 2px 8px;
+	font-size: 24px;
+	padding: 0.25em 0.4em;
 	width: max-content;
-	margin-top: 16px;
+	margin-top: 8px;
 }
 .disclaimer {
 	position: absolute;

@@ -102,7 +102,7 @@
 	position: relative;
 	width: auto;
 	height: auto;
-	padding: 2px 10px;
+	padding: 0.25em 0.4em;
 	display: inline-block;
 	overflow: hidden;
 }
@@ -126,7 +126,7 @@ k {
 	background-color: #ab0066;
 	border-radius: 5px;
 	font-size: 16px;
-	padding: 2px 8px;
+	padding: 0.25em 0.4em;
 	width: max-content;
 	/* margin-top: 16px; */
 }
