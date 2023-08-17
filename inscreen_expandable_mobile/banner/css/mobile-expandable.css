@@ -1,0 +1,178 @@
+/*
+inscreen_expandable_mobile_boilerplate
+gumgum-ljp_dev_environment v3.3.6 2023-06-01 
+ */
+
+
+@font-face {
+    font-family: Corbel;
+    src: url(../mfex/Corbel.woff) format("woff");
+}
+
+body {
+    background: transparent;
+}
+
+.jp-addon-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1000000;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyNjUgMjY1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNjUgMjY1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2Rpc3BsYXk6bm9uZTtmaWxsOiMzNTI3QzE7fQoJLnN0MXtvcGFjaXR5OjAuMztlbmFibGUtYmFja2dyb3VuZDpuZXcgICAgO30KCS5zdDJ7c3Ryb2tlOiNGRkZGRkY7c3Ryb2tlLXdpZHRoOjEyO3N0cm9rZS1saW5lY2FwOnJvdW5kO30KPC9zdHlsZT4KPHJlY3QgeD0iLTEyIiB5PSItOSIgY2xhc3M9InN0MCIgd2lkdGg9IjMwMiIgaGVpZ2h0PSIyOTUiLz4KPHRpdGxlPkFydGJvYXJkIDI8L3RpdGxlPgo8Y2lyY2xlIGlkPSJPdmFsIiBjbGFzcz0ic3QxIiBjeD0iMTMyLjUiIGN5PSIxMzIuNSIgcj0iMTI3LjUiLz4KPHBhdGggaWQ9IkxpbmUiIGNsYXNzPSJzdDIiIGQ9Ik0xODguMiw3Ni44bC0xMTQuNSwxMTgiLz4KPHBhdGggaWQ9IkxpbmUtMiIgY2xhc3M9InN0MiIgZD0iTTE5MS40LDE5NC44TDc2LjgsNzYuOCIvPgo8L3N2Zz4K") no-repeat;
+}
+
+.jp-addon-swipetosee-main {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0.4) 28%);
+}
+
+.jp-addon-pseudo-body {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 60%;
+    background: white;
+}
+
+.jp-addon-openclosepanel-btn {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transform: translateX(-50%);
+    border: none;
+    height: 75%;
+    padding: 0;
+    background: none;
+    font-family: Corbel, Arial, Helvetica, sans-serif;
+    font-size: 3.3vw;
+    color: white;
+    white-space: nowrap;
+}
+
+.jp-addon-openclosepanel-btn * {
+    display: block;
+    pointer-events: none;
+}
+
+.jp-addon-openclosepanel-btn span {
+    transform: translateY(15%);
+}
+
+.jp-addon-openclosepanel-arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -43%);
+    width: 7%;
+    max-width: 26px;
+}
+
+.jp-addon-swipe-sense {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#jp-addon-openpanel-btn .jp-addon-openclosepanel-arrow.animate {
+    animation: arrow-pulse 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+#body_main .jp-addon-swipe-sense {
+    left: 30%;
+    width: 40%;
+    height: 150%;
+}
+
+#body_expanded .jp-addon-pseudo-body {
+    opacity: 0;
+    height: 0;
+}
+
+#body_expanded .jp-addon-swipetosee-expanded {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 10%;
+    visibility: hidden;
+}
+
+#body_expanded #jp-addon-closepanel-btn {
+    top: 0;
+    height: 100%;
+}
+
+#body_expanded #jp-addon-closepanel-btn span {
+    margin-bottom: 1.5%;
+}
+
+#body_expanded #jp-addon-openpanel-btn .jp-addon-openclosepanel-arrow {
+    transform: translate(-50%, -43%);
+}
+
+#body_expanded #jp-addon-closepanel-btn .jp-addon-openclosepanel-arrow {
+    top: auto;
+    bottom: 0;
+    pointer-events: all;
+
+    transform: translate(-50%, 50%) rotate(180deg);
+}
+
+@keyframes arrow-pulse {
+    0% {
+        transform: translate(-50%, -45%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (min-width: 500px) {
+    .jp-addon-close-btn {
+        top: 2px;
+        right: 2px;
+
+        width: 20px;
+        height: 20px;
+    }
+
+    .jp-addon-openclosepanel-btn {
+        font-size: 10px;
+    }
+
+    .jp-addon-pseudo-body,
+    .jp-addon-swipetosee-main,
+    .jp-addon-swipetosee-expanded {
+        height: 50%;
+    }
+
+    #body_expanded #jp-addon-closepanel-btn span {
+        visibility: hidden;
+    }
+
+    .jp-addon-openclosepanel-arrow {
+        max-width: 17px;
+    }
+}
+
+@media (max-height:120px) {
+    .jp-addon-openclosepanel-arrow {
+        width: 6%;
+    }
+}

@@ -1,0 +1,513 @@
+/* gumgum-ljp_creative_template v1.6.4 2023-06-01 */@font-face {
+    font-family: 'FontA'; src: url('../assets-template/fonts/Cambria.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FontB'; src: url('../assets-template/fonts/Corbel.woff') format('woff');
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+    opacity: 0;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+} /* GLOBAL ---------------------------------------------------------------------------- */html {
+    font-size: 16px;
+}
+
+.jp-addon-pseudo-body {
+    background: black;
+    color: white;
+    font-family: FontA;
+    overflow: hidden;
+}
+
+.jp-entrance-anim {
+    opacity: 0;
+}
+
+.jpt-nowrap {
+    white-space: nowrap;
+}
+
+.jpt-spacer {
+    top: 0;
+    position: relative;
+    width: 100%;
+    padding-bottom: 57%;
+    pointer-events: none;
+}
+
+.jpt-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jpt-section {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.jpt-section.jpt-footer {
+    height: 17%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.jpt-block {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.jpt-h1 {
+    text-align: center;
+    font-family: FontA;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: .2em;
+    padding: 0 .3rem;
+    width: 100%;
+}
+
+.jpt-h2 {
+    text-align: center;
+    font-family: FontA;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: .2em;
+    padding: 0 .3rem;
+    width: 100%
+}
+
+.jpt-p {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0 .3rem;
+    width: 100%;
+}
+
+.jpt-h1-image-container:not(:only-child) {
+    text-align: center;
+    margin-bottom: .8rem;
+    padding: 0 .3rem;
+    width: 100%;
+}
+
+.jpt-h2-image-container {
+    text-align: center;
+    margin: .1rem 0 .4rem 0;
+    padding: 0 .3rem;
+    width: 100%;
+}
+
+.jpt-heading-image {
+    width: 75%;
+}
+
+.jpt-ul {
+    font-family: FontA;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: .7em;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding: 0 .3rem;
+}
+
+.jpt-ul li {
+    white-space: nowrap;
+}
+
+.jpt-section, .jpt-section>* {
+    flex-shrink: 0;
+    flex-grow: 0;
+} /* Specific assets ------------------------------------------------------------------- */.jpt-logo {
+    height: 37%;
+}
+
+.jpt-background-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jpt-kv-image {
+    position: absolute;
+    display: block;
+    background-size: contain;
+    width: 92%;
+    height: 95%;
+    top: 50%;
+    left: 50%;
+ /* transform: translate(-50%, -50%); */
+}
+
+#body_expanded .jpt-kv-image {
+    height: 100%;
+}
+
+div.jpt-video-container {
+    position: relative;
+    width: 100%;
+}
+
+.jpt-legals {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: unset;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    pointer-events: none;
+}
+
+.jpt-legals-content {
+    position: relative;
+    font-family: FontB;
+    color: white;
+    font-size: .8rem;
+    text-align: center;
+    line-height: 1.2em;
+    width: 100%;
+    padding: .4em;
+    overflow-y: auto;
+    height: 100%;
+    pointer-events: all;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.jpt-legals-edge {
+    background: linear-gradient(rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.jpt-button-legals {
+    position: relative;
+    border: none;
+    padding: 2% 2% 0% 5%;
+    background: transparent;
+    right: auto;
+    width: auto;
+    pointer-events: all;
+    color: grey;
+    font-size: .9rem;
+    padding: .1em .4em;
+    margin-bottom: 3%;
+}
+
+.jpt-button-legals img {
+    width: 100%;
+    pointer-events: none;
+} /* CTA ------------------------------------------------------------------------------- */.jpt-cta {
+    font-family: FontB;
+    font-size: 1.2rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    overflow: visible;
+}
+
+.jpt-cta span {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    background: black;
+    line-height: 1em;
+    height: 1em;
+    border: 1px white solid;
+    box-sizing: content-box;
+    padding: .5em 1.7em .5em 1.7em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.jpt-cta-img {
+    width: 60%;
+    max-width: 180px;
+}
+
+.jpt-cta-img[jp-cta-hover='arrow'] {
+    width: 6em;
+}
+
+[jp-cta-hover='bg'] span {
+    background-color: black;
+    color: white;
+    transition: background .3s, color .3s;
+}
+
+[jp-cta-hover='bg'].hover span {
+    background-color: white;
+    color: black;
+}
+
+.jpt-cta[jp-cta-hover='arrow'] {
+    font-size: 1.4rem;
+    margin-right: .4em;
+}
+
+.jpt-cta[jp-cta-hover='arrow'] img {
+    width: 80%;
+}
+
+[jp-cta-hover='arrow'] span {
+    padding: .5em .2em .5em .2em;
+    border: none;
+}
+
+.jpt-cta .jp-cta-arrow {
+    border-color: white;
+} /* Carousel -------------------------------------------------------------------------- */.jp-carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.jpt-carousel {
+    width: 100%;
+ /* height:100%; */
+}
+
+.jp-carousel-item {
+    background-size: cover;
+    background-position: center;
+}
+
+.jp-carousel-item:first-child {
+    background-position: top center;
+}
+
+.jp-carousel-dotnav-holder-bottom {
+    bottom: 0;
+}
+
+.jp-carousel~.jpt-p {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    font-size: 1rem;
+    text-align: right;
+    display: none;
+}
+
+.jp-carousel-arrownav-holder {
+    display: none;
+}
+
+.jp-carousel-dotnav-holder {
+    display: block;
+}
+
+.jp-carousel-default-arrow rect {
+    fill: black;
+}
+
+.jp-carousel-default-arrow polygon {
+    fill: white;
+}
+
+.jp-carousel-dotnav {
+    width: 14px;
+    height: 14px;
+    background-color: black;
+    border-color: grey;
+}
+
+.jp-carousel-dotnav-active {
+    background-color: white;
+} /* BG ----------------------------------------------------------------------- */.jpt-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-property: height;
+}
+
+.jpt-bg::after {
+    content: "";
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.jpt-bg [jp-controls] {
+    height: 100% !important;
+}
+
+.jpt-bg .jp-controls-holder, .jpt-bg .jp-controls-bigplay {
+    display: none;
+}
+
+.jpt-bg [jp-controls] video {
+    margin: 0 !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} /* MAIN PANEL ------------------------------------------------------------------------ */html#html_main {
+    font-size: 5.5vh;
+}
+
+#body_main .jpt-cta span {
+    padding: .4em 1.2em .4em 1.2em;
+}
+
+#body_main .jpt-cta {
+    font-size: 1.6rem;
+    will-change: font-size;
+}
+
+#body_main .jpt-cta[jp-cta-hover='arrow'] {
+    font-size: 5.5rem;
+}
+
+#body_main .jpt-cta-img[jp-cta-hover='arrow'] {
+    font-size: 2.5rem;
+}
+
+#body_main [jp-cta-hover='arrow'] span {
+    padding: .4em .05em .4em .05em;
+    border: none;
+}
+
+#body_main .jpt-h2 {
+ /* margin-top:.3em; */
+    margin-bottom: 0;
+}
+
+#body_main .jp-carousel-dotnav {
+    width: 10px;
+    height: 10px;
+}
+
+#body_main .jpt-video-container, #body_main [jp-controls] {
+    width: 100%;
+    height: 100% !important;
+}
+
+#body_main .jpt-video-container video {
+    margin: 0 !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.jpt-section-left {
+    overflow: hidden;
+    width: 48%;
+}
+
+.jpt-section.jpt-section-right {
+    flex-grow: 1;
+    padding: 1% 0;
+    width: 52%;
+} /* EXPANDED PANEL -------------------------------------------------------------------- */html#html_expanded {
+    font-size: 3.8vh;
+}
+
+#body_expanded .jpt-wrapper {
+    flex-direction: column;
+    justify-content: space-around;
+    visibility: hidden;
+    padding-top: .7rem;
+    padding-bottom: .5rem;
+}
+
+#body_expanded .jpt-section {
+    width: 100%;
+    height: auto;
+}
+
+#body_expanded .jpt-section-top {
+    max-height: 55%;
+}
+
+#body_expanded .jpt-section-image {
+    height: 50%;
+    flex-shrink: 1;
+}
+
+#body_expanded .jpt-logo {
+    height: 75%;
+}
+
+#body_expanded .jpt-section-copy {
+ /* height:30%; */
+    padding: 2% 0;
+}
+
+#body_expanded .jpt-section-footer {
+    height: 15%;
+    max-height: 56px;
+    flex-direction: row;
+}
+
+#body_expanded .jpt-section-footer .jpt-section {
+    width: auto;
+    height: 100%;
+}
+
+#body_expanded .jpt-cta-img {
+    width: 36%;
+    max-width: 150px;
+} /* #body_expanded .jpt-section-carousel{ height:50%; } */ /* #body_expanded .jpt-video-container{ width:auto; height:100%; } */@media screen and (min-height:400px) {
+    html#html_expanded {
+        font-size: 16px;
+    }
+} /* @media screen and (min-aspect-ratio:10/12) { #body_expanded .jpt-video-container{ width: 90%; } } */
