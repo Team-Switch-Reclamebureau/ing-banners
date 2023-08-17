@@ -76,12 +76,11 @@
 	height: 100%;
 }
 .slide .image img {
-	min-width: 100%;
-	width: auto;
+	width: 400px;
 	height: 100%;
 	object-fit: cover;
-	object-position: center left;
-	transform-origin: center left;
+	object-position: center bottom;
+	transform-origin: top left;
 }
 
 .slide .text {
@@ -161,9 +160,10 @@ k {
 
 .slide-2 {
 	left: 100%;
-	width: 50%;
+	width: 0%;
 }
 .slide-2 .image img {
+	width: 100%;
 	object-position: center top;
 }
 .slide-3 {

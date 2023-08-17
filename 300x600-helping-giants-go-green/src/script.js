@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		var slide1Duration = 4;
 		// slide1Duration = 1; //DEV
 		tl.to('.slide-1 .text', {
-			duration: slide1Duration/2,
+			duration: slide1Duration / 2,
 			opacity: 1,
 			y: 0,
 			ease: 'ease-out',
@@ -58,6 +58,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				duration: swipePart1,
 				scale: '0.75',
 				x: -16,
+				ease: 'ease-out',
+			},
+			'<'
+		);
+		tl.to(
+			'.slide-1 .image img',
+			{
+				duration: swipePart1,
+				x: -200,
 				ease: 'ease-out',
 			},
 			'<'
