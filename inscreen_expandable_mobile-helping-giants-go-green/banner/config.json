@@ -1,0 +1,16 @@
+{
+	"clickurl": "https://www.ing.nl/careers",
+	"format": "Mobile Footer",
+	"devicesimulator" : "no",
+
+	"size": {
+		"unit":"percent",
+		"width":100,
+		"height":25,
+		"scaletofit":"no"
+	},
+
+	"style": {
+		"background": "transparent"
+	}
+}

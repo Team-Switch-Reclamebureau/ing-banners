@@ -1,0 +1,132 @@
+/* ------------------------------------------------
+ LEAVE IN PLACE --------------------------------- */
+body {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.outer-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+/* --------------------------------------------- */
+
+@font-face {
+	font-family: 'ING Me';
+	src: url('../assets/INGMe.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ING Me Bold';
+	src: url('../assets/INGMe-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+#banner {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	color: white;
+	font-family: 'ING Me';
+}
+
+#banner > img {
+	display: block;
+	position: absolute;
+	width: calc(100% + 20px);
+	height: auto;
+	object-fit: cover;
+    object-position: center;
+
+	animation: pan 10s infinite ease-in-out;
+}
+
+@keyframes pan {
+	0% {
+		transform: translateX(0px);
+	}
+	50% {
+		transform: translateX(-20px);
+	}
+}
+
+.white {
+	/* helping giants go green */
+	position: absolute;
+	top: 10vmin;
+	left: 16px;
+
+	font-family: 'ING Me Bold';
+	font-size: 10vmin;
+}
+.white span {
+	display: block;
+}
+
+.disclaimer {
+	position: absolute;
+	left: 16px;
+	right: 64px;
+
+	bottom: 16px;
+	font-size: 6px;
+}
+
+.container.bottom {
+	position: absolute;
+	bottom: 32px;
+	left: 16px;
+	right: 16px;
+}
+
+.orange {
+	/* Make it your job */
+
+	font-family: 'ING Me Bold';
+	font-size: 9vmin;
+	background-color: #ff6200;
+	color: white;
+	border-radius: 5px;
+	padding: 5px 10px;
+	width: max-content;
+}
+
+.purple {
+	/* ing.nl/careers */
+
+	background-color: #ab0066;
+	color: white;
+	border-radius: 5px;
+	font-size: 5vmin;
+	padding: 2px 8px;
+	margin-top: 8px;
+	width: max-content;
+}
+
+.logo {
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+	height: 32px;
+	width: 32px;
+
+	z-index: 2;
+}
+
+.logo svg {
+	width: 100%;
+	height: 100%;
+}
+.logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
