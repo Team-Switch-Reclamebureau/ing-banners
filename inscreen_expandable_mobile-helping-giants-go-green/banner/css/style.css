@@ -95,19 +95,18 @@ body {
 	background-color: #ff6200;
 	color: white;
 	border-radius: 5px;
-	padding: 5px 10px;
-	width: max-content;
+	padding: .25em .4em;	width: max-content;
 }
 
 .purple {
 	/* ing.nl/careers */
 
+	font-family: 'ING Me Bold';
 	background-color: #ab0066;
 	color: white;
 	border-radius: 5px;
 	font-size: 5vmin;
-	padding: 2px 8px;
-	margin-top: 8px;
+	padding: .25em .4em;	margin-top: 8px;
 	width: max-content;
 }
 

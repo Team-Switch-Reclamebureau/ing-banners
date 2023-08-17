@@ -44,7 +44,7 @@ body {
 	width: calc(100% + 20px);
 	height: auto;
 	object-fit: cover;
-    object-position: center;
+	object-position: center;
 
 	animation: pan 10s infinite ease-in-out;
 }
@@ -95,18 +95,19 @@ body {
 	background-color: #ff6200;
 	color: white;
 	border-radius: 5px;
-	padding: 5px 10px;
+	padding: 0.25em 0.4em;
 	width: max-content;
 }
 
 .purple {
 	/* ing.nl/careers */
 
+	font-family: 'ING Me Bold';
 	background-color: #ab0066;
 	color: white;
 	border-radius: 5px;
 	font-size: 5vmin;
-	padding: 2px 8px;
+	padding: 0.25em 0.4em;
 	margin-top: 8px;
 	width: max-content;
 }
