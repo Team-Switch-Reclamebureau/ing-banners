@@ -85,7 +85,7 @@ body {
 	/* Make it your job */
 
 	font-family: 'ING Me Bold';
-	font-size: 9vmin;
+	font-size: 7vmin;
 	background-color: #ff6200;
 	color: white;
 	border-radius: 5px;
@@ -100,7 +100,7 @@ body {
 	background-color: #ab0066;
 	color: white;
 	border-radius: 5px;
-	font-size: 5vmin;
+	font-size: 4vmin;
 	padding: .25em .4em;
 	margin-top: 8px;
 	width: max-content;
