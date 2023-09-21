@@ -198,9 +198,19 @@ k {
 	height: 100%;
 }
 .logo img {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+
+.logo img.logo-orange {
+	opacity: 1;
+}
+.logo img.logo-white {
+	opacity: 0;
 }
 
 /* .logo .logo-border {

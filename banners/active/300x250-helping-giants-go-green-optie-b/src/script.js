@@ -184,6 +184,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			},
 			'<'
 		);
+		tl.to(
+			'.logo .logo-orange',
+			{
+				duration: 0,
+				opacity: '0',
+			},
+			'<'
+		);
+		tl.to(
+			'.logo .logo-white',
+			{
+				duration: 0,
+				opacity: '1',
+			},
+			'<'
+		);
 
 		var slide2Duration = 3;
 		tl.from('.slide-extra .text > span.orange', {
