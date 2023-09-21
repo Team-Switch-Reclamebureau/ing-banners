@@ -159,8 +159,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			'<'
 		);
 
-		// slide extra
-
+		// slide 3
 		tl.to('.slide-2', {
 			duration: 0,
 			width: '0',
@@ -168,96 +167,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		});
 		tl.to(
 			'.slide-2 .text',
-			{
-				duration: 0,
-				opacity: '0',
-				ease: 'ease-out',
-			},
-			'<'
-		);
-		tl.to(
-			'.slide-extra',
-			{
-				duration: 1,
-				opacity: '1',
-				ease: 'ease-out',
-			},
-			'<'
-		);
-		tl.to(
-			'.logo .logo-orange',
-			{
-				duration: 0,
-				opacity: '0',
-			},
-			'<'
-		);
-		tl.to(
-			'.logo .logo-white',
-			{
-				duration: 0,
-				opacity: '1',
-			},
-			'<'
-		);
-
-		var slide2Duration = 3;
-		tl.from('.slide-extra .text > span.orange', {
-			duration: 0.5,
-			opacity: 0,
-			y: 16,
-			ease: 'ease-out',
-		});
-		tl.from(
-			'.slide-extra .text .bg',
-			{
-				duration: 0.75,
-				transform: 'scale(0, 100%)',
-				ease: 'ease-out',
-			},
-			'<'
-		);
-		tl.staggerFrom(
-			'.slide-extra .text span > k',
-			0.125,
-			{
-				opacity: 0,
-				y: 8,
-				ease: 'ease',
-			},
-			0.125,
-			'<'
-		);
-		tl.from(
-			'.slide-extra .text span.purple',
-			{
-				duration: 0.5,
-				opacity: 0,
-				y: 8,
-				ease: 'ease-out',
-			},
-			'-=0.5'
-		);
-		tl.to(
-			'.slide-extra .image img',
-			{
-				duration: slide2Duration,
-				scale: 1.025,
-				ease: 'linear',
-			},
-			'<'
-		);
-
-		tl.to({}, 2, {}); // pause for 2 seconds
-
-		// slide 3
-		tl.to('.slide-extra', {
-			duration: 0,
-			width: '0',
-			ease: 'ease-out',
-		});
-		tl.to(
-			'.slide-extra .text',
 			{
 				duration: 0,
 				opacity: '0',

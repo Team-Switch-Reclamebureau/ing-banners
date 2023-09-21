@@ -113,14 +113,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 		// // slide 2
 		var slide2Duration = 3;
-		tl.from('.slide-2 .text > span.orange.part1', {
+		tl.from('.slide-2 .text > span.orange', {
 			duration: 0.5,
 			opacity: 0,
 			y: 16,
 			ease: 'ease-out',
 		});
 		tl.from(
-			'.slide-2 .text span.part1 .bg',
+			'.slide-2 .text .bg',
 			{
 				duration: 0.75,
 				transform: 'scale(0, 100%)',
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			'<'
 		);
 		tl.staggerFrom(
-			'.slide-2 .text span.part1 > k',
+			'.slide-2 .text span > k',
 			0.125,
 			{
 				opacity: 0,
@@ -158,19 +158,58 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			},
 			'<'
 		);
-		tl.to('.slide-2 .text span.part1', {
-			duration: 0.5,
-			opacity: 0,
+
+		// slide extra
+
+		tl.to('.slide-2', {
+			duration: 0,
+			width: '0',
 			ease: 'ease-out',
 		});
-		tl.from('.slide-2 .text > span.orange.part2', {
+		tl.to(
+			'.slide-2 .text',
+			{
+				duration: 0,
+				opacity: '0',
+				ease: 'ease-out',
+			},
+			'<'
+		);
+		tl.to(
+			'.slide-extra',
+			{
+				duration: 1,
+				opacity: '1',
+				ease: 'ease-out',
+			},
+			'<'
+		);
+		tl.to(
+			'.logo .logo-orange',
+			{
+				duration: 0,
+				opacity: '0',
+			},
+			'<'
+		);
+		tl.to(
+			'.logo .logo-white',
+			{
+				duration: 0,
+				opacity: '1',
+			},
+			'<'
+		);
+
+		var slide2Duration = 3;
+		tl.from('.slide-extra .text > span.orange', {
 			duration: 0.5,
 			opacity: 0,
 			y: 16,
 			ease: 'ease-out',
 		});
 		tl.from(
-			'.slide-2 .text span.part2 .bg',
+			'.slide-extra .text .bg',
 			{
 				duration: 0.75,
 				transform: 'scale(0, 100%)',
@@ -179,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			'<'
 		);
 		tl.staggerFrom(
-			'.slide-2 .text span.part2 > k',
+			'.slide-extra .text span > k',
 			0.125,
 			{
 				opacity: 0,
@@ -189,17 +228,36 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			0.125,
 			'<'
 		);
+		tl.from(
+			'.slide-extra .text span.purple',
+			{
+				duration: 0.5,
+				opacity: 0,
+				y: 8,
+				ease: 'ease-out',
+			},
+			'-=0.5'
+		);
+		tl.to(
+			'.slide-extra .image img',
+			{
+				duration: slide2Duration,
+				scale: 1.025,
+				ease: 'linear',
+			},
+			'<'
+		);
 
-		tl.to({}, 3, {}); // wait 2s
+		tl.to({}, 2, {}); // pause for 2 seconds
 
 		// slide 3
-		tl.to('.slide-2', {
+		tl.to('.slide-extra', {
 			duration: 0,
 			width: '0',
 			ease: 'ease-out',
 		});
 		tl.to(
-			'.slide-2 .text',
+			'.slide-extra .text',
 			{
 				duration: 0,
 				opacity: '0',
