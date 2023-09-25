@@ -122,18 +122,28 @@
 k {
 	font-family: inherit;
 }
-
-.text span.orange.part2 {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
 .text span.purple {
 	background-color: #ab0066;
 	border-radius: 5px;
 	font-size: 14px;
 	padding: 2px 8px;
 	width: max-content;
+	animation: buzz 1.5s infinite;
+}
+
+@keyframes buzz {
+	0%,
+	100% {
+		transform: rotate(0deg);
+	}
+	33% {
+		transform: rotate(1deg);
+		scale: 1.1;
+	}
+	66% {
+		transform: rotate(-1deg);
+		scale: 1.1;
+	}
 }
 .disclaimer {
 	position: absolute;

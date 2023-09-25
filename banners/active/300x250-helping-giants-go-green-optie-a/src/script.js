@@ -113,14 +113,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 		// // slide 2
 		var slide2Duration = 3;
-		tl.from('.slide-2 .text > span.orange', {
+		tl.from('.slide-2 .text > span.orange.part1', {
 			duration: 0.5,
 			opacity: 0,
 			y: 16,
 			ease: 'ease-out',
 		});
 		tl.from(
-			'.slide-2 .text .bg',
+			'.slide-2 .text span.part1 .bg',
 			{
 				duration: 0.75,
 				transform: 'scale(0, 100%)',
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			'<'
 		);
 		tl.staggerFrom(
-			'.slide-2 .text span > k',
+			'.slide-2 .text span.part1 > k',
 			0.125,
 			{
 				opacity: 0,
@@ -158,6 +158,39 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			},
 			'<'
 		);
+		tl.to('.slide-2 .text span.part1', {
+			duration: 0.5,
+			opacity: 0,
+			ease: 'ease-out',
+		});
+		tl.from('.slide-2 .text > span.orange.part2', {
+			duration: 0.5,
+			opacity: 0,
+			y: 16,
+			ease: 'ease-out',
+		});
+		tl.from(
+			'.slide-2 .text span.part2 .bg',
+			{
+				duration: 0.75,
+				transform: 'scale(0, 100%)',
+				ease: 'ease-out',
+			},
+			'<'
+		);
+		tl.staggerFrom(
+			'.slide-2 .text span.part2 > k',
+			0.125,
+			{
+				opacity: 0,
+				y: 8,
+				ease: 'ease',
+			},
+			0.125,
+			'<'
+		);
+
+		tl.to({}, 3, {}); // wait 2s
 
 		// slide 3
 		tl.to('.slide-2', {
