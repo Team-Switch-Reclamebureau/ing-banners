@@ -249,57 +249,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		);
 
 		tl.to({}, 2, {}); // pause for 2 seconds
-
-		// slide 3
-		tl.to('.slide-extra', {
-			duration: 0,
-			width: '0',
-			ease: 'ease-out',
-		});
-		tl.to(
-			'.slide-extra .text',
-			{
-				duration: 0,
-				opacity: '0',
-				ease: 'ease-out',
-			},
-			'<'
-		);
-		tl.to(
-			'.logo',
-			{
-				duration: 0,
-				opacity: '0',
-				ease: 'ease-out',
-			},
-			'<'
-		);
-		tl.to('.slide-3', {
-			duration: 0,
-			left: '0',
-			width: '100%',
-			ease: 'ease-out',
-		});
-
-		let lionLength = 0.125;
-		let lionDelay = 0.2;
-		tl.from('.slide-3 svg #do', {
-			duration: lionLength,
-			opacity: '0',
-			ease: 'ease-out',
-			delay: lionDelay,
-		});
-		tl.from('.slide-3 svg #your', {
-			duration: lionLength,
-			opacity: '0',
-			ease: 'ease-out',
-			delay: lionDelay,
-		});
-		tl.from('.slide-3 svg #thing', {
-			duration: lionLength,
-			opacity: '0',
-			ease: 'ease-out',
-			delay: lionDelay,
-		});
 	}
 });
