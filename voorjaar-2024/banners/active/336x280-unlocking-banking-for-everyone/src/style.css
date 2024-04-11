@@ -146,6 +146,7 @@ k {
 }
 
 .slide-1 .text {
+	top: 45%;
 	transform: translateX(-50px);
 	opacity: 0;
 }
