@@ -1,0 +1,6 @@
+Advertiser name: ING
+Headline: Unlocking banking for everyone
+Body text: Make it your job
+Landing page URL: https://ing.nl/careers/
+Caption URL: ing.nl/careers
+Call to action: Learn more
