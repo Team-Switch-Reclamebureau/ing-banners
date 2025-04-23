@@ -101,7 +101,7 @@ banners.variants.forEach((variant) => {
 				size.imageWidth ? size.imageWidth : width,
 				size.imageHeight ? size.imageHeight : height,
 				{
-					quality: 10,
+					quality: 80,
 					strategy: 'entropy',
 				}
 			)
