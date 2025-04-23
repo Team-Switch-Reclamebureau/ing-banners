@@ -3,12 +3,14 @@
 		{
 			"headline": ["Our benefits,", "your choice."],
 			"image": "images/Financing dreams left.jpg",
+			"imageAlign": "centre",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
 		{
 			"headline": ["Helping giants,", "go green"],
 			"image": "images/Helping giants go green Links.jpg",
+			"imageAlign": "bottom",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		}

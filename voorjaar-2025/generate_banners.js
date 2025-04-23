@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const handlebars = require('handlebars');
 const sharp = require('sharp');
+const puppeteer = require('puppeteer-core');
 
 const templateBaseDir = path.join(__dirname, 'template');
 const bannersFile = path.join(__dirname, 'banners.json');
@@ -98,7 +99,11 @@ banners.variants.forEach((variant) => {
 		sharp(scaledImage)
 			.resize(
 				size.imageWidth ? size.imageWidth : width,
-				size.imageHeight ? size.imageHeight : height
+				size.imageHeight ? size.imageHeight : height,
+				{
+					quality: 10,
+					strategy: 'entropy',
+				}
 			)
 			.toFile(imageScaledPath, (err) => {
 				if (err) {
@@ -107,6 +112,44 @@ banners.variants.forEach((variant) => {
 					console.log(`Resized image saved to ${imageScaledPath}`);
 				}
 			});
+
+		// run the resulting index.html file, let the animation run, then save the resulting image as image.jpg
+		const indexPath = path.join(outputDir, 'index.html');
+		const outputImagePath = path.join(outputDir, 'fallback.jpg');
+		(async () => {
+			const browser = await puppeteer.launch({
+				headless: true,
+				args: ['--no-sandbox', '--disable-setuid-sandbox'],
+				executablePath:
+					'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', // Path to Chrome on macOS
+			});
+			const page = await browser.newPage();
+
+			// Set the viewport to the desired width and height
+			await page.setViewport({
+				width: width,
+				height: height,
+			});
+
+			await page.goto(`file://${indexPath}`, {
+				waitUntil: 'networkidle0',
+			});
+
+			// Wait for the animation to complete
+			await new Promise((resolve) => setTimeout(resolve, 5000));
+
+			// Capture a screenshot and save it to the outputImagePath
+			await page.screenshot({
+				path: outputImagePath,
+				fullPage: false, // Capture only the viewport
+			});
+
+			console.log(`Screenshot saved to ${outputImagePath}`);
+
+			await browser.close();
+		})().catch((error) => {
+			console.error('Error capturing screenshot:', error);
+		});
 	});
 });
 
