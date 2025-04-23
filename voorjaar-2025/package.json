@@ -1,0 +1,18 @@
+{
+  "name": "voorjaar-2025",
+  "version": "1.0.0",
+  "main": "generate_banners.js",
+  "scripts": {
+    "start": "nodemon src/generate_banners.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "sharp": "^0.34.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

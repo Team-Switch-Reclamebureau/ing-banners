@@ -1,0 +1,42 @@
+{
+	"variants": [
+		{
+			"headline": ["Our benefits,", "your choice."],
+			"image": "images/Financing dreams left.jpg",
+			"url": "https://www.ing.nl/careers",
+			"button_text": "ing.nl/careers"
+		},
+		{
+			"headline": ["Helping giants,", "go green"],
+			"image": "images/Helping giants go green Links.jpg",
+			"url": "https://www.ing.nl/careers",
+			"button_text": "ing.nl/careers"
+		}
+	],
+	"sizes": [
+		{
+			"template": "small",
+			"width": 300,
+			"height": 250
+		},
+		{
+			"template": "small",
+			"width": 336,
+			"height": 280
+		},
+		{
+			"template": "narrow",
+			"width": 300,
+			"height": 600,
+			"imageWidth": 300,
+			"imageHeight": 360
+		},
+		{
+			"template": "wide",
+			"width": 970,
+			"height": 250,
+			"imageWidth": 582,
+			"imageHeight": 250
+		}
+	]
+}

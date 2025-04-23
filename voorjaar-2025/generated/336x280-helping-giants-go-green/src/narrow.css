@@ -1,0 +1,14 @@
+.slide.image {
+	height: 60%;
+}
+.slide.content {
+	height: 40%;
+	top: 60%;
+}
+.slide.content .text span {
+	font-size: 32px;
+}
+.slide.content .button {
+	font-size: 14px;
+	margin-bottom: 32px;
+}

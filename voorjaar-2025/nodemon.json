@@ -1,0 +1,5 @@
+{
+	"watch": ["template", "banners.json", "generate_banners.js"],
+	"ext": "*",
+	"exec": "node generate_banners.js"
+}
