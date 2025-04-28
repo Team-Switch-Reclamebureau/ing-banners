@@ -30,7 +30,7 @@ section {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
-	align-items: center;
+	align-items: flex-start;
 
 	.item {
 		// background-color: grey;

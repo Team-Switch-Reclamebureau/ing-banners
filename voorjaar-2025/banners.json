@@ -1,16 +1,50 @@
 {
 	"variants": [
 		{
+			"id": "1a",
 			"headline": ["Our benefits,", "your choice."],
-			"image": "images/Financing dreams left.jpg",
-			"imageAlign": "centre",
+			"image": "images/Father and his two children sitting at a table looking at a laptop.jpg",
+			"imageAlign": "center",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
 		{
-			"headline": ["Helping giants,", "go green"],
-			"image": "images/Helping giants go green Links.jpg",
-			"imageAlign": "bottom",
+			"id": "1b",
+			"headline": ["Our benefits,", "your choice."],
+			"image": "images/20250417-ING DYT spring campagne _Q0A9087-Edit_screen-3500-sRGB_.jpg",
+			"imageAlign": "top",
+			"url": "https://www.ing.nl/careers",
+			"button_text": "ing.nl/careers"
+		},
+		{
+			"id": "2a",
+			"headline": ["Ready.", "Set.", "Grow."],
+			"image": "images/20250418-ING DYT spring campagne_Q0A1401-Edit_screen-3500-sRGB_.jpg",
+			"imageAlign": "center",
+			"url": "https://www.ing.nl/careers",
+			"button_text": "ing.nl/careers"
+		},
+		{
+			"id": "2b",
+			"headline": ["Ready.", "Set.", "Grow."],
+			"image": "images/20250418-ING DYT spring campagne_Q0A1309-Edit_screen-3500-sRGB_.jpg",
+			"imageAlign": "attention",
+			"url": "https://www.ing.nl/careers",
+			"button_text": "ing.nl/careers"
+		},
+		{
+			"id": "3a",
+			"headline": ["Your desk is", "where the wifi is"],
+			"image": "images/20250417-ING DYT spring campagne _Q0A8345_screen-3500-sRGB_.jpg",
+			"imageAlign": "left",
+			"url": "https://www.ing.nl/careers",
+			"button_text": "ing.nl/careers"
+		},
+		{
+			"id": "3b",
+			"headline": ["Your desk is", "where the wifi is"],
+			"image": "images/20250418-ING DYT spring campagne_Q0A1665-Edit_screen-3500-sRGB_.jpg",
+			"imageAlign": "top",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		}
@@ -19,26 +53,50 @@
 		{
 			"template": "small",
 			"width": 300,
-			"height": 250
+			"height": 250,
+			"imageWidth": 300,
+			"imageHeight": 250,
+
+			"id_size": 28,
+			"padding": 14,
+			"tagline_size": 32,
+			"button_size": 14
 		},
 		{
 			"template": "small",
 			"width": 336,
-			"height": 280
+			"height": 280,
+			"imageWidth": 336,
+			"imageHeight": 280,
+
+			"id_size": 32,
+			"padding": 16,
+			"tagline_size": 40,
+			"button_size": 16
 		},
 		{
 			"template": "narrow",
 			"width": 300,
 			"height": 600,
 			"imageWidth": 300,
-			"imageHeight": 360
+			"imageHeight": 360,
+
+			"id_size": 34,
+			"padding": 18,
+			"tagline_size": 36,
+			"button_size": 16
 		},
 		{
 			"template": "wide",
 			"width": 970,
 			"height": 250,
 			"imageWidth": 582,
-			"imageHeight": 250
+			"imageHeight": 250,
+
+			"id_size": 28,
+			"padding": 14,
+			"tagline_size": 40,
+			"button_size": 16
 		}
 	]
 }

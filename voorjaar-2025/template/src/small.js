@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		const button = document.querySelector('.button');
 
 		const duration = 0.6;
-		const ease = 'power2.ease-out';
+		const ease = 'cubic-bezier(0.87, 0, 0.28, 1)';
 
 		// delay the animation for 0.5 seconds
 		tl.to(banner, {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				x: width * 0.2,
 				ease,
 			},
-			`-=${duration}`
+			`<`
 		);
 
 		// slide the content partly into view
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				width: width * 0.4,
 				ease,
 			},
-			`-=${duration}`
+			`<`
 		);
 		// move the logo to the center
 		// tl.to(
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		// 		y: height * 0.5 - logo.offsetHeight * 1.5,
 		// 		ease,
 		// 	},
-		// 	`-=${duration}`
+		// 	`<`
 		// );
 
 		// fade in the logo
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				x: width * 0.5,
 				ease,
 			},
-			`-=${duration}`
+			`<`
 		);
 		// slide in the content
 		tl.to(
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				width: width,
 				ease,
 			},
-			`-=${duration}`
+			`<`
 		);
 		// move the logo to its normal position
 		// tl.to(logo, {
@@ -135,13 +135,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		tl.to(
 			button,
 			{
-				duration: 0.5,
+				duration,
 				scale: 1.05,
-				ease: 'power1.inOut',
+				ease,
 				yoyo: true,
 				repeat: 3,
 			},
-			`-=${duration}`
+			`<`
 		);
 	}
 });

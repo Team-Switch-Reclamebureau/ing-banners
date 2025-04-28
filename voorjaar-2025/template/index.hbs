@@ -28,16 +28,22 @@
 				<div class='slide image'>
 					<img src='src/image_scaled.jpg' alt='' />
 				</div>
-				<div class='slide content'>
-					<div class='logo'>
-						<img class='logo-white' src='src/id.png' alt='' />
+				<div class='slide content' style='padding: {{padding}}px'>
+					<div
+						class='logo'
+						style='width: {{id_size}}px; height: {{id_size}}px'
+					>
+						<img class='logo-white' src='src/id.svg' alt='' />
 					</div>
-					<div class='text'>
+					<div class='text' style='font-size: {{tagline_size}}px'>
 						{{#each headline}}
 							<span>{{this}}</span>
 						{{/each}}
 					</div>
-					<div class='button'>{{button_text}}</div>
+					<div
+						class='button'
+						style='font-size: {{button_size}}px'
+					>{{button_text}}</div>
 				</div>
 
 				<div class='outerBorder'></div>
