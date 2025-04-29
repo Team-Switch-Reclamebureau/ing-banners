@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		const duration = 0.6;
 		const ease = 'power2.ease-out';
 
-		// delay the animation for 0.5 seconds
+		// delay the animation
 		tl.to(banner, {
 			duration,
 			opacity: 1,
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			image,
 			{
 				duration,
-				x: width * 0.15,
+				x: width * 0.1,
 				ease,
 			},
 			`<`

@@ -3,47 +3,53 @@
 		{
 			"id": "1a",
 			"headline": ["Our benefits,", "your choice."],
-			"image": "images/Father and his two children sitting at a table looking at a laptop.jpg",
-			"imageAlign": "center",
+			"headlineHigh": ["Our,", "benefits", "your", "choice."],
+			"image": "images/1a.jpg",
+			"imageAlign": "attention",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
 		{
 			"id": "1b",
 			"headline": ["Our benefits,", "your choice."],
-			"image": "images/20250417-ING DYT spring campagne _Q0A9087-Edit_screen-3500-sRGB_.jpg",
+			"headlineHigh": ["Our,", "benefits", "your", "choice."],
+			"image": "images/1b.jpg",
 			"imageAlign": "top",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
 		{
 			"id": "2a",
-			"headline": ["Ready.", "Set.", "Grow."],
-			"image": "images/20250418-ING DYT spring campagne_Q0A1401-Edit_screen-3500-sRGB_.jpg",
-			"imageAlign": "center",
+			"headline": ["Ready. Set.", "Grow."],
+			"headlineHigh": ["Ready.", "Set.", "Grow."],
+			"image": "images/2a.jpg",
+			"imageAlign": "entropy",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
 		{
 			"id": "2b",
-			"headline": ["Ready.", "Set.", "Grow."],
-			"image": "images/20250418-ING DYT spring campagne_Q0A1309-Edit_screen-3500-sRGB_.jpg",
-			"imageAlign": "attention",
+			"headline": ["Ready. Set.", "Grow."],
+			"headlineHigh": ["Ready.", "Set.", "Grow."],
+			"image": "images/2b_edit.jpg",
+			"imageAlign": "center",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
 		{
 			"id": "3a",
 			"headline": ["Your desk is", "where the wifi is"],
-			"image": "images/20250417-ING DYT spring campagne _Q0A8345_screen-3500-sRGB_.jpg",
-			"imageAlign": "left",
+			"headlineHigh": ["Your desk", "is where", "the wifi is"],
+			"image": "images/3a.jpg",
+			"imageAlign": "center",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
 		{
 			"id": "3b",
 			"headline": ["Your desk is", "where the wifi is"],
-			"image": "images/20250418-ING DYT spring campagne_Q0A1665-Edit_screen-3500-sRGB_.jpg",
+			"headlineHigh": ["Your desk", "is where", "the wifi is"],
+			"image": "images/3b.jpg",
 			"imageAlign": "top",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
@@ -60,7 +66,8 @@
 			"id_size": 28,
 			"padding": 14,
 			"tagline_size": 32,
-			"button_size": 14
+			"button_size": 14,
+			"button_margin": 14
 		},
 		{
 			"template": "small",
@@ -72,19 +79,21 @@
 			"id_size": 32,
 			"padding": 16,
 			"tagline_size": 40,
-			"button_size": 16
+			"button_size": 16,
+			"button_margin": 16
 		},
 		{
 			"template": "narrow",
 			"width": 300,
 			"height": 600,
-			"imageWidth": 300,
+			"imageWidth": 400,
 			"imageHeight": 360,
 
 			"id_size": 34,
 			"padding": 18,
 			"tagline_size": 36,
-			"button_size": 16
+			"button_size": 16,
+			"button_margin": 32
 		},
 		{
 			"template": "wide",
@@ -96,7 +105,8 @@
 			"id_size": 28,
 			"padding": 14,
 			"tagline_size": 40,
-			"button_size": 16
+			"button_size": 16,
+			"button_margin": 16
 		}
 	]
 }

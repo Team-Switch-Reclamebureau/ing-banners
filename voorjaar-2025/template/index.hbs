@@ -36,13 +36,19 @@
 						<img class='logo-white' src='src/id.svg' alt='' />
 					</div>
 					<div class='text' style='font-size: {{tagline_size}}px'>
-						{{#each headline}}
-							<span>{{this}}</span>
-						{{/each}}
+						{{#if (and (eq template 'narrow') headlineHigh)}}
+							{{#each headlineHigh}}
+								<span>{{this}}</span>
+							{{/each}}
+						{{else}}
+							{{#each headline}}
+								<span>{{this}}</span>
+							{{/each}}
+						{{/if}}
 					</div>
 					<div
 						class='button'
-						style='font-size: {{button_size}}px'
+						style='font-size: {{button_size}}px; margin-bottom: {{button_margin}}px'
 					>{{button_text}}</div>
 				</div>
 

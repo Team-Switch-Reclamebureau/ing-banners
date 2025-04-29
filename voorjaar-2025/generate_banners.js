@@ -57,70 +57,91 @@ banners.variants.forEach((variant) => {
 			headline: headlineFull,
 		});
 
-		// loop through all template files and add the necessary files to the output directory
-		const fileWhitelist = [
-			'blob.svg',
-			'id.svg',
-			'INGdisplay-Bold.woff2',
-			'INGMe-Bold.woff2',
-			'script.js',
-			'style.css',
-		];
-		fileWhitelist.push(`${size.template}.css`, `${size.template}.js`);
+		let generateFiles = true;
+		if (generateFiles) {
+			// loop through all template files and add the necessary files to the output directory
+			const fileWhitelist = [
+				'blob.svg',
+				'id.svg',
+				'INGdisplay-Bold.woff2',
+				'INGMe-Bold.woff2',
+				'script.js',
+				'style.css',
+			];
+			fileWhitelist.push(`${size.template}.css`, `${size.template}.js`);
 
-		// copy the template files to the output directory
-		fs.readdir(templateDir, (err, files) => {
-			if (err) throw err;
+			// copy the template files to the output directory
+			fs.readdir(templateDir, (err, files) => {
+				if (err) throw err;
 
-			files.forEach((file) => {
-				// check if the file is a folder
-				if (fs.lstatSync(path.join(templateDir, file)).isDirectory()) {
-					// if it is a folder, copy the folder to the output directory
-					const folderPath = path.join(templateDir, file);
-					const outputFolderPath = path.join(outputDir, file);
-					if (!fs.existsSync(outputFolderPath)) {
-						fs.mkdirSync(outputFolderPath, { recursive: true });
-					}
-					fs.readdir(folderPath, (err, files) => {
-						if (err) throw err;
-						files.forEach((file) => {
-							if (fileWhitelist.includes(file)) {
-								// copy the file to the output directory
-								const filePath = path.join(folderPath, file);
-								const outputFilePath = path.join(
-									outputFolderPath,
-									file
-								);
-								fs.copyFileSync(filePath, outputFilePath);
-							}
+				files.forEach((file) => {
+					// check if the file is a folder
+					if (
+						fs.lstatSync(path.join(templateDir, file)).isDirectory()
+					) {
+						// if it is a folder, copy the folder to the output directory
+						const folderPath = path.join(templateDir, file);
+						const outputFolderPath = path.join(outputDir, file);
+						if (!fs.existsSync(outputFolderPath)) {
+							fs.mkdirSync(outputFolderPath, { recursive: true });
+						}
+						fs.readdir(folderPath, (err, files) => {
+							if (err) throw err;
+							files.forEach((file) => {
+								if (fileWhitelist.includes(file)) {
+									// copy the file to the output directory
+									const filePath = path.join(
+										folderPath,
+										file
+									);
+									const outputFilePath = path.join(
+										outputFolderPath,
+										file
+									);
+									fs.copyFileSync(filePath, outputFilePath);
+								}
+							});
 						});
+						return;
+					}
+
+					const templatePath = path.join(templateDir, file);
+					const templateContent = fs.readFileSync(
+						templatePath,
+						'utf8'
+					);
+					const template = handlebars.compile(templateContent);
+
+					handlebars.registerHelper('eq', function (a, b) {
+						return a === b;
 					});
-					return;
-				}
 
-				const templatePath = path.join(templateDir, file);
-				const templateContent = fs.readFileSync(templatePath, 'utf8');
-				const template = handlebars.compile(templateContent);
+					handlebars.registerHelper('and', function (...args) {
+						// Remove the last argument (Handlebars options object)
+						args.pop();
+						return args.every(Boolean);
+					});
 
-				// Generate the HTML
-				const html = template({
-					...size,
-					...variant,
-					date: new Date().toLocaleDateString('nl-NL', {
-						year: 'numeric',
-						month: '2-digit',
-						day: '2-digit',
-					}),
+					// Generate the HTML
+					const html = template({
+						...size,
+						...variant,
+						date: new Date().toLocaleDateString('nl-NL', {
+							year: 'numeric',
+							month: '2-digit',
+							day: '2-digit',
+						}),
+					});
+
+					// Write the HTML to a file
+					const outputFilePath = path.join(
+						outputDir,
+						`${file.replace('.hbs', '.html')}`
+					);
+					fs.writeFileSync(outputFilePath, html);
 				});
-
-				// Write the HTML to a file
-				const outputFilePath = path.join(
-					outputDir,
-					`${file.replace('.hbs', '.html')}`
-				);
-				fs.writeFileSync(outputFilePath, html);
 			});
-		});
+		}
 
 		// resize the image in imagePath to the correct size and put it in the output directory as image_scaled.jpg
 		let generateImages = true;
@@ -245,8 +266,11 @@ const overviewHtml = `<html>
 								<a href="${banner.uri}" target="_blank">
 									bekijk los
 								</a>
-								<a hidden href="${banner.uri.replace('index.html', 'fallback.jpg')}" target="_blank">
-									fallback
+								<a href="${banner.uri.replace(
+									'index.html',
+									'fallback.jpg'
+								)}" target="_blank">
+									fallback image
 								</a>
 								<a hidden href="${banner.uri.replace('/index.html', '.zip')}" target="_blank">
 									download .zip
