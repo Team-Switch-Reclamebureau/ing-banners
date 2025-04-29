@@ -205,7 +205,7 @@ banners.variants.forEach((variant) => {
 			});
 		}
 
-		let generateZipFiles = true;
+		let generateZipFiles = false;
 		if (generateZipFiles) {
 			const archiveDir = path.join(
 				generatedDir,
@@ -237,7 +237,21 @@ const overviewHtml = `<html>
 					.map((banner) => {
 						return `
 						<div class="item">
-							<iframe src="${banner.uri}" width="${banner.width}" height="${banner.height}" frameborder="0"></iframe>
+							<iframe src="${banner.uri}" width="${banner.width}" height="${
+							banner.height
+						}" frameborder="0"></iframe>
+							<div class="footer">
+								<p>${banner.width} x ${banner.height}</p>
+								<a href="${banner.uri}" target="_blank">
+									bekijk los
+								</a>
+								<a hidden href="${banner.uri.replace('index.html', 'fallback.jpg')}" target="_blank">
+									fallback
+								</a>
+								<a hidden href="${banner.uri.replace('/index.html', '.zip')}" target="_blank">
+									download .zip
+								</a>
+							</div>
 						</div>`;
 					})
 					.join('')}
