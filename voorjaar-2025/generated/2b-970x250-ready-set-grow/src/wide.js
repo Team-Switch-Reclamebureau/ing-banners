@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		tl.to(imageSlide, {
 			duration,
 			opacity: 1,
-			x: width * -0.2,
+			// width: width * 0.4,
 			ease,
 		});
 		// slide the img to the top
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			image,
 			{
 				duration,
-				x: width * 0.1,
+				width: width * 0.4,
 				ease,
 			},
 			`<`

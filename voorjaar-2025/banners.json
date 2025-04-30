@@ -3,9 +3,9 @@
 		{
 			"id": "1a",
 			"headline": ["Our benefits,", "your choice."],
-			"headlineHigh": ["Our,", "benefits", "your", "choice."],
-			"image": "images/1a.jpg",
-			"imageAlign": "attention",
+			"headlineHigh": ["Our", "benefits,", "your", "choice."],
+			"image": "images/1a_edit.jpg",
+			"imageAlign": "center",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
@@ -13,7 +13,7 @@
 			"id": "1b",
 			"headline": ["Our benefits,", "your choice."],
 			"headlineHigh": ["Our,", "benefits", "your", "choice."],
-			"image": "images/1b.jpg",
+			"image": "images/1b_edit.jpg",
 			"imageAlign": "top",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
@@ -22,8 +22,8 @@
 			"id": "2a",
 			"headline": ["Ready. Set.", "Grow."],
 			"headlineHigh": ["Ready.", "Set.", "Grow."],
-			"image": "images/2a.jpg",
-			"imageAlign": "entropy",
+			"image": "images/2a_edit.jpg",
+			"imageAlign": "left top",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
 		},
@@ -49,7 +49,7 @@
 			"id": "3b",
 			"headline": ["Your desk is", "where the wifi is"],
 			"headlineHigh": ["Your desk", "is where", "the wifi is"],
-			"image": "images/3b.jpg",
+			"image": "images/3b_edit.jpg",
 			"imageAlign": "top",
 			"url": "https://www.ing.nl/careers",
 			"button_text": "ing.nl/careers"
@@ -100,7 +100,7 @@
 			"width": 970,
 			"height": 250,
 			"imageWidth": 582,
-			"imageHeight": 250,
+			"imageHeight": 280,
 
 			"id_size": 28,
 			"padding": 14,

@@ -186,7 +186,7 @@ banners.variants.forEach((variant) => {
 		}
 
 		// run the resulting index.html file, let the animation run, then save the resulting image as image.jpg
-		let generareFallbackImages = false;
+		let generareFallbackImages = true;
 		if (generareFallbackImages) {
 			const indexPath = path.join(outputDir, 'index.html');
 			const outputImagePath = path.join(outputDir, 'fallback.jpg');
@@ -226,7 +226,7 @@ banners.variants.forEach((variant) => {
 			});
 		}
 
-		let generateZipFiles = false;
+		let generateZipFiles = true;
 		if (generateZipFiles) {
 			const archiveDir = path.join(
 				generatedDir,

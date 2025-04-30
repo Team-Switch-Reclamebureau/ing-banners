@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			image,
 			{
 				duration,
-				y: height * 0.15,
+				y: height * 0.2,
+				height: height * 0.5,
 				ease,
 			},
 			`<`
