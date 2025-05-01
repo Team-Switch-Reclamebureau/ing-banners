@@ -12,7 +12,7 @@
 		{
 			"id": "1b",
 			"headline": ["Our benefits,", "your choice."],
-			"headlineHigh": ["Our,", "benefits", "your", "choice."],
+			"headlineHigh": ["Our", "benefits,", "your", "choice."],
 			"image": "images/1b_edit.jpg",
 			"imageAlign": "top",
 			"url": "https://www.ing.nl/careers",
@@ -100,7 +100,7 @@
 			"width": 970,
 			"height": 250,
 			"imageWidth": 582,
-			"imageHeight": 280,
+			"imageHeight": 300,
 
 			"id_size": 28,
 			"padding": 14,

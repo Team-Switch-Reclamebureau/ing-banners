@@ -266,10 +266,7 @@ const overviewHtml = `<html>
 								<a href="${banner.uri}" target="_blank">
 									bekijk los
 								</a>
-								<a href="${banner.uri.replace(
-									'index.html',
-									'fallback.jpg'
-								)}" target="_blank">
+								<a href="${banner.uri.replace('index.html', 'fallback.jpg')}" target="_blank">
 									fallback image
 								</a>
 								<a hidden href="${banner.uri.replace('/index.html', '.zip')}" target="_blank">
