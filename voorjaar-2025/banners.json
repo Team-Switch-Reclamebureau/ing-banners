@@ -38,8 +38,8 @@
 		},
 		{
 			"id": "3a",
-			"headline": ["Your desk is", "where the wifi is"],
-			"headlineHigh": ["Your desk", "is where", "the wifi is"],
+			"headline": ["Your desk is", "where the wifi is."],
+			"headlineHigh": ["Your desk", "is where", "the wifi is."],
 			"image": "images/3a.jpg",
 			"imageAlign": "center",
 			"url": "https://www.ing.nl/careers",
@@ -47,8 +47,8 @@
 		},
 		{
 			"id": "3b",
-			"headline": ["Your desk is", "where the wifi is"],
-			"headlineHigh": ["Your desk", "is where", "the wifi is"],
+			"headline": ["Your desk is", "where the wifi is."],
+			"headlineHigh": ["Your desk", "is where", "the wifi is."],
 			"image": "images/3b_edit.jpg",
 			"imageAlign": "top",
 			"url": "https://www.ing.nl/careers",
