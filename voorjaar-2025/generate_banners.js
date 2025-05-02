@@ -14,9 +14,9 @@ let bannerLinks = [];
 
 // remove generated folder if it exists
 const generatedDir = path.join(__dirname, 'generated');
-// if (fs.existsSync(generatedDir)) {
-// 	fs.rmSync(generatedDir, { recursive: true });
-// }
+if (fs.existsSync(generatedDir)) {
+	fs.rmSync(generatedDir, { recursive: true });
+}
 
 // loop through all variants
 banners.variants.forEach((variant) => {
