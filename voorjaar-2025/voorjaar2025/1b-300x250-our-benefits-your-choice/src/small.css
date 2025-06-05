@@ -1,0 +1,6 @@
+.slide.content {
+	transform: translateX(100%);
+}
+.slide.content .logo {
+	opacity: 0;
+}
